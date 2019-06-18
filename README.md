@@ -14,7 +14,7 @@ Kooplex has many features that can benefit either a research community or a scho
 
                                                                                                                                                                                                            
 
-![](/img/logo.png)                                                                                                                                                             
+![](/img/logos/logo.png)                                                                                                                                                             
 
 
 

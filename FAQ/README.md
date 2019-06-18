@@ -18,11 +18,12 @@ At the moment mailing is not working and administrators don't get notified when 
 
 ## RStudio server
 * When entering into Rstudio it gives an R session Error
+![Rsession](/img/rsessionerror.png)
 
 You can safely ignore this message. In case you do notice some kind of malfunction then please, report it to the administrators!
 Report preview in user container
 
 * When running `preview-bokeh.sh` or `preview-nb-api.sh`
 
-the preview is completely public. Anyone who can guess the ur can see it
+the preview is completely public. Anyone who can guess the url can see it
 

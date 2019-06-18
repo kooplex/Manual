@@ -5,7 +5,7 @@ Docker and containers, Notebooks,
 
 Docker engine
 
-Docker is a virtualization engine, which allows services to run on the same machine but with completely indepentent environments. These environments are called docker images and their instance is a container. A container is like a leightweight virtual machine.
+[Docker](https://www.docker.com/why-docker) is a virtualization engine, which allows services to run on the same machine but with completely indepentent environments. These environments are called docker images and their instance is a container. A container is like a leightweight virtual machine.
 
 Notebooks
 
