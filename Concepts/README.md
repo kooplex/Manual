@@ -7,7 +7,8 @@ Docker engine
 
 [Docker](https://www.docker.com/why-docker) is a virtualization engine, which allows services to run on the same machine but with completely indepentent environments. These environments are called docker images and their instance is a container. A container is like a leightweight virtual machine.
 
-Notebooks
+<span id="notebook"></span>
+### Notebooks
 
 In Kooplex we call 'notebooks' all browser based environments like Jupyter or Rstudio, that users can use for coding and development. These notebooks have well established communities, they are open source and used by millions around the world.
 Plese visit Jupyter and Rstudio Server for further informations.
