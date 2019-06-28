@@ -1,4 +1,4 @@
 #### Add collaborators
 
-![](/img/container-conf-meta.png)
+![](/img/container-conf-collab.png)
 

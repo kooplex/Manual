@@ -20,7 +20,7 @@ The following symbols refer to the state of the container:
 * ![](/img/thrsh-btn.png) - This button shows up in the Containers menu. This will delete all non default entries in the Kooplex database that is related to this  *container*.
 
 
-* ![](/img/present-symbol.png) - The *container* is not present in the docker engine but exist only in the Kooplex database.
+* ![](/img/present-symbol.png) - The *container* is not present in the docker engine but exist only in the Kooplex database. 
 * ![](/img/tick-symbol.png) - The *container* is present in the docker engine and running.
 * ![](/img/x-symbol.png) - The *container* is present in the docker engine and stopped.
 * ![](/img/deleted-symbol.png) - The *container* does not exist.

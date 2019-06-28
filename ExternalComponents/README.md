@@ -3,5 +3,5 @@ External Components
 
 ## Version controlled repositories
 
-* [Github](github.md)
+* Add a [Github](github.md) token, and access your reporitories
 

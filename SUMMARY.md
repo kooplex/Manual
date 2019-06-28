@@ -1,6 +1,6 @@
 # Summary
 
-* [Introduction](README.md)
+* [Home](README.md)
 * [What is Kooplex](WhatisKooplex/README.md)
 * [Login](Login/README.md)
 * [Containers](Containers/README.md)
@@ -17,6 +17,8 @@
 * [Working in Projects](Projects/README.md)
 * [Compute Nodes](ComputeNodes/README.md)
 * [Folder Structure](FolderStructure/README.md)
+  * [In a course container](FolderStructure/course.md)
+  * [In a project container](FolderStructure/project.md)
 * [Reports](Reports/README.md)
 * [Concepts](Concepts/README.md)
 * [External Components](ExternalComponents/README.md)
