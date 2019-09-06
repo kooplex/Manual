@@ -18,12 +18,17 @@ Reports should be prepared in the /report/_prepare/ directory. From the Hub -> R
 In order to secure the content one can use a password. This way it possible to show plots or any other results to non-registered people but keep the content still confidential.
 
 ### Html reports
-For this you should choose Static content served by an nginx server. There is always a main html file (index file) but there can be additional files in the same folder, which are used within the main html file.
+For this you should choose Static content served by a webserver. There is always a main html file (index file) but there can be additional files in the same folder, which are used within the main html file.
 There are many python (or other) modules that will include javascript functions in the html files and enable many interactive tools such as
 
 *    Holoviews
 *   Pivottable Js
 
+From a jupyter notebook you can create html with the following command:
+
+```
+jupyter-nbconvert Your.ipynb
+```
 
 ### Interactive reports
 
@@ -42,3 +47,31 @@ Preview of interactive reports.
 It is advisable to test your report before committing it.
 For html files you can use jupyter-nbconvert in the terminal. If you then click on it in the file browser then you will see the result There are two scripts preview-bokeh.sh and preview-nb-api.sh for that purpose. Running these scripts in the report's folder will create a preview of it. The scripts will print out the url where your report can be visited.
 Let say $USER is 'wgct0p' and the site is 'https://kooplex.com' then it will be like https://kooplex.com/notebook/wgct0p-projectname-wgct0p/report. 
+
+
+### Jupyter notebook as a report
+Possible
+
+## Styling the reports
+
+### Hiding cells
+Use nbextension hide_cells
+
+### Use a jupyter theme
+```
+from jupyterthemes.stylefx import set_nb_theme
+set_nb_theme('monokai')
+```
+
+### Check the available themes
+```
+from jupyterthemes import get_themes
+get_themes()
+```
+
+## API with jupyter-kernel-gateway
+
+All APIs must have a */help* endpoint. When clicking on it on the report page the link will always point to the */help* endpoint so anyone can learn about its usage. It is advisable to describe all endpoints clearly.
+
+### Data and other files
+When creating a report put all auxiliary files into the same folder and never reference any files or folders outside of the reports folder. You can however reference data via abosulute URL-s

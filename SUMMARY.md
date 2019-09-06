@@ -23,6 +23,7 @@
 * [Concepts](Concepts/README.md)
 * [External Components](ExternalComponents/README.md)
   * [Github](ExternalComponents/github.md)
+* [Tips and ideas for Kooplex usage](Ideas/README.md)
 * [FAQ](FAQ/README.md)
 
 
