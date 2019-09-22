@@ -1,42 +1,53 @@
 Reports
 =========
 
+Reports should be prepared in the `/home/report/_prepare/` directory. From the Hub -> Reports dropdown menu you can create a new report, from the folders of `/report/_prepare/`. 
+The whole directory will be saved into the `/home/report/` directory as read-only. One report can have many versions and each snapshot will have a timstamp.
+
+
+## How to publish a report?
+In the menu click on the dropdown menu `Reports -> New report`.
+* **The name of your report:**
+* **
+r this you should choose Static content served by a webserver. There is always a main html file (index file) but there can be additional files in the same folder, which are used within the main html file.
+
 ## Static or interactive
+
 Reports can be either private or public.
 
-    private: only registered users are allowed to open it
-    public: it is visble to the public without logging in to Kooplex
+* private: only registered users are allowed to open it
+* public: it is visble to the public without logging in to Kooplex
 
 There are three types of reports currently supported in Kooplex:
 
-    Static or self-contained interactive HTML pages
-    Interactive pages hosted by either bokeh or the jupyter-kernelgateway
-    REST services running in jupyter notebooks.
+* Static or interactive self-contained [HTML](#HTML) page 
+* Interactive pages hosted by either bokeh or the jupyter-kernelgateway
+* REST services running in jupyter notebooks.
 
-Reports should be prepared in the /report/_prepare/ directory. From the Hub -> Reports dropdown menu you can create a new report, from the folders of /report/_prepare/. The whole directory will be saved into the /report directory as read-only. One report can have many versions and each snapshot will have a timstamp.
 
-In order to secure the content one can use a password. This way it possible to show plots or any other results to non-registered people but keep the content still confidential.
-
-### Html reports
-For this you should choose Static content served by a webserver. There is always a main html file (index file) but there can be additional files in the same folder, which are used within the main html file.
+### HTML reports<a name="HTML"></a>
+It is possible convert notebooks into HTML files that can be either static or interactive. The created HTML file then can be displayed on Kooplex. 
 There are many python (or other) modules that will include javascript functions in the html files and enable many interactive tools such as
 
 *    Holoviews
 *   Pivottable Js
 
+ The method of conversion depends on the type of the notebook.
+
+#### How to create and HTML report?
 From a jupyter notebook you can create html with the following command:
 
 ```
-jupyter-nbconvert Your.ipynb
+jupyter-nbconvert Example-interactive.ipynb  --to html --execute
 ```
+It executes all the cells in the notebook and will generate an `Example-interactive.html` out of all input and output cells. It is possible with additional scripts to hide input cells, change the width etc.
+[See the tricks page](https://github.com/jegesm/Presentation-tricks)
 
-### Interactive reports
+### Interactive reports<a name="interactive"></a>
 
 *    Bokeh server
-    (Not yet functional)
 
 *    jupyter-kernelgateway
-    (Not yet functional)
 
 REST services running in jupyter notebooks.
 A REST service is basically an application that listens at an url and serves the queries that are addressed towards it. For example you can trigger one of its function with additional ? and it will return with some data, that can be a number, a list or even an interactive plot (see bokeh embed).
@@ -75,3 +86,6 @@ All APIs must have a */help* endpoint. When clicking on it on the report page th
 
 ### Data and other files
 When creating a report put all auxiliary files into the same folder and never reference any files or folders outside of the reports folder. You can however reference data via abosulute URL-s
+
+## Securing your report
+In order to secure the content one can use a password. This way it is possible to show plots or any other results to non-registered people but keep the content still confidential.
