@@ -8,6 +8,9 @@ The whole directory will be copied into the `/home/report/<report_name>` directo
 
 All relevant files should be in the `<report_name>` folder or its subfolders.
 
+![prepare](/img/report-folder.png)
+![prepare](/img/report-prepare-folder.png)
+
 ## How to publish a report?
 In the menu click on the dropdown menu `Reports -> New report`.
  * **The name of your report** (required): this will appear as its title

@@ -11,7 +11,4 @@ To develop a small scale ecosystem where administrators/users can install state 
 
 To develop and maintain a small scale ecosystem where users can experiment with any combination of tools without the restrictions of the policies of a large 
 
-#group and project management, authentication, access level control (we have something in place, but should be adjusted for the new needs) There may be several projects for each use case scenario WPs
-
-#virtualization, dynamic allocation and deployment of containers to SELECTA cloud COMPUTE system at EBI.. Wigner provide the frontend, ENA serve compute containers close to data >
 
