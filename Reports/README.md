@@ -1,7 +1,8 @@
 Reports
 =========
 
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/BAeBvcoNKOg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<img src="videos/Kooplex-Seafile-beginning.gif">
 ## Where to create reports?
 Reports should be prepared in the `/home/report/_prepare/<report_name>` directory. From the Hub -> Reports dropdown menu you can create a new report, from the folders that are in `/home/report/_prepare/`. 
 The whole directory will be copied into the `/home/report/<report_name>` directory as read-only. One report can have many versions and each snapshot will have a timestamp.
