@@ -20,6 +20,7 @@
   * [In a course container](FolderStructure/course.md)
   * [In a project container](FolderStructure/project.md)
 * [Reports](Reports/README.md)
+* [Seafile](Seafile/README.md)
 * [Concepts](Concepts/README.md)
 * [External Components](ExternalComponents/README.md)
   * [Github](ExternalComponents/github.md)
