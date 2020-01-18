@@ -19,13 +19,19 @@
 * [Folder Structure](FolderStructure/README.md)
   * [In a course container](FolderStructure/course.md)
   * [In a project container](FolderStructure/project.md)
-* [Reports](Reports/README.md)
 * [Seafile](Seafile/README.md)
+* [Reports](Reports/README.md)
+  * [HTML report](Reports/html.md)
+  * [BOKEH report](Reports/bokeh.md)
+  * [API report](Reports/API.md)
+  * [NB report](Reports/notebook.md)
 * [Concepts](Concepts/README.md)
 * [External Components](ExternalComponents/README.md)
   * [Github](ExternalComponents/github.md)
 * [Tips and ideas for Kooplex usage](Ideas/README.md)
+  * [Jupyter extensions](Ideas/jupyter.md)
 * [FAQ](FAQ/README.md)
+* [Developer Notes](Developer/README.md)
 
 
 
