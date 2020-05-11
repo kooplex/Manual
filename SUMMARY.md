@@ -24,6 +24,7 @@
   * [HTML report](Reports/html.md)
   * [BOKEH report](Reports/bokeh.md)
   * [API report](Reports/API.md)
+  * [Dashboard Server](Reports/DashboardServer.md)
   * [NB report](Reports/notebook.md)
 * [Concepts](Concepts/README.md)
 * [External Components](ExternalComponents/README.md)
