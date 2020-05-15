@@ -1,6 +1,0 @@
-Jupyter
-============
-
-General
-
-Kooplex specific

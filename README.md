@@ -1,6 +1,6 @@
-# Kooplex Hub User Guide                                                                                                                                                                                                                                                                                                                                                        
+# Kooplex Hub User Guide
 
-Kooplex has many features that can benefit either a research community or a school where courses are held for students. **Therefore** there is a shared documentation part and a separated for **research **and **education.**                                            
+## Should be used as a plugin for Kooplex
 
 **Kooplex official page**: [kooplex.github.io](https://kooplex.github.io/)
                                                                                                                                                                                                         
@@ -13,8 +13,6 @@ Kooplex has many features that can benefit either a research community or a scho
                                                                                                                                                                                                            
 
                                                                                                                                                                                                            
-
-![](/img/logos/logo.png)                                                                                                                                                             
 
 
 
