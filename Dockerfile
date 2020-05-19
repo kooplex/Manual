@@ -1,13 +1,13 @@
 #FROM docsifyapp/node-ci 
 FROM littlstar/docker-docsify
 
-#ADD entrypoint.sh /entrypoint.sh
-
+ADD entrypoint.sh /entrypoint.sh
+RUN chmod a+x /entrypoint.sh
 #EXPOSE 4000
 
-WORKDIR /docs
+WORKDIR /manual
 
-#CMD ["sleep", "infinity"]
-ENTRYPOINT ["sleep", "infinity"]
+#ENTRYPOINT ["sleep", "infinity"]
+ENTRYPOINT ["/entrypoint.sh"]
 
 

@@ -18,7 +18,7 @@ services:
       - LANG=en_US.UTF-8
       - PREFIX=##PREFIX##
     volumes:
-      - ##PREFIX##-manual:/docs
+      - ##PREFIX##-manual:/manual/docs
 
 networks:
   ##PREFIX##-net:

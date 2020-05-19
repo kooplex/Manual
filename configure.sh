@@ -17,7 +17,7 @@ case $VERB in
       docker $DOCKERARGS volume create -o type=none -o device=$SRV/_manual -o o=bind ${PREFIX}-manual
 
 
-      cp Dockerfile  $RF
+      cp Dockerfile entrypoint.sh $RF
       
       sed -e "s/##PREFIX##/$PREFIX/" \
           -e "s/##EXTRACONFIG##/$EXTRACONFIG/" docker-compose.yml-template > $DOCKER_COMPOSE_FILE

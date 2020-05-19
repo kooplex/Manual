@@ -1,6 +1,4 @@
-# Summary
-
-## 1. Getting started
+### 1. Getting started
 * [Home](README.md)
 * [What is Kooplex](WhatisKooplex/README.md)
 * [Login](Login/README.md)
@@ -12,14 +10,8 @@
 * [Notebooks](Notebooks/README.md)
   * [Jupyter Notebook Server](Containers/Jupyter.md)
   * [Rstudio Server](Containers/Rstudio.md)
-### 3. Teaching
-* [Teaching courses with Kooplex](Education/README.md)
-  * [Teaching](Education/Teaching.md)
-  * [Courses](Education/Courses.md)
-  
 ### 4. Working
 * [Working in Projects](Projects/README.md)
-* [Compute Nodes](ComputeNodes/README.md)
 * [Folder Structure](FolderStructure/README.md)
   * [In a course container](FolderStructure/course.md)
   * [In a project container](FolderStructure/project.md)
