@@ -1,4 +1,4 @@
-#### Set the image and add volumes
+#### Set the image of the container
 
 **If any changes are made to the volumes or its image then the container needs to be deleted !**
 
