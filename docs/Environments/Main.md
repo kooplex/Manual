@@ -22,8 +22,10 @@ The resources of these *environments* are limited to short computations with mod
 ### Configure an environment
 #### Image type
 Docker images can be created by authorized users, which are then added to the pool of available images. [Read more](https://docs.docker.com/engine/reference/commandline/images/) about Docker images.
+> Docker images are the basis of [containers](#container). An Image is an ordered collection of root filesystem changes and the corresponding execution parameters for use within a container runtime. An image typically contains a union of layered filesystems stacked on top of each other. An image does not have state and it never changes.
+
 #### Projects
-Any number of [projects](Project/Main.md) can be set for each *environment*, and also a project an be associated with any number of *environments*. For each project a folder will appear in the *workdir_projects* folder and in the *report_prepare* folder.
+Any number of [projects](Project/Main.md) can be set for each *environment*, and also a project an be associated with any number of *environments*. For each project a folder will appear in the `/v/workdir_projects` folder and in the `/v/report_prepare` folder.
 #### Volumes
 
 #### Synchronized files

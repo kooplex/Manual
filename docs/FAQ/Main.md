@@ -13,9 +13,6 @@ At the moment each method will create an independent account and your account na
 
 At the moment mailing is not working and administrators don't get notified when you registered. To activate your account you will need their approval, therefore please send an email to them directly to kooplex at complex.elte.hu to notify them. Thank you!
 
-## Duplicate of a UserCourseBinding
-* When someone changes from one group to another within a course an error will occur. It is best if you notify an administrator when this occurs.
-
 ## RStudio server
 * When entering into Rstudio it gives an R session Error
 ![Rsession](/img/rsessionerror.png)
@@ -23,7 +20,4 @@ At the moment mailing is not working and administrators don't get notified when 
 You can safely ignore this message. In case you do notice some kind of malfunction then please, report it to the administrators!
 Report preview in user container
 
-* When running `preview-bokeh.sh` or `preview-nb-api.sh`
-
-the preview is completely public. Anyone who can guess the url can see it
 

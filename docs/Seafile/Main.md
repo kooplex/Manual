@@ -1,11 +1,6 @@
 Seafile
 =========
 
-## How to install Desktop client
-Visit https://www.seafile.com/en/download/ for further information on this
-
-## Setting up Desktop client
-When you are at the "add a client" section then on the left bottom corner push the **Single Sign on** button, insert *https://kooplex-fiek.elte.hu/seafile* and then follow the usual login process.
 
 ## Activate libraries in Kooplex 
 <div align=center>
@@ -27,3 +22,10 @@ Every time a new library is created within Seafile, the list needs to be refresh
 
 Toggle the *Mount* button and the library will appear in the *synchron* folder (Check the [folder structure]( FolderStructure/Main.md) for more details!
 If the environment is already started then a warning will appear to restart the environment.
+
+## Seafile  Desktop client
+### Installation
+Visit https://www.seafile.com/en/download/ for further information on this
+
+### Setting up with Kooplex
+When you are at the "add a client" section then on the left bottom corner push the **Single Sign on** button, insert *https://<domain_name>/seafile* and then follow the usual login process.
