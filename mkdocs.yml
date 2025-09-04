@@ -1,0 +1,46 @@
+site_name: Kooplex Documentation
+theme:
+  name: readthedocs
+  highlightjs: true
+  hijs_languages:
+        - python
+  features:
+    - navigation.sections
+  favicon: static/favicon.png
+  logo: static/logo-halfcolored.png
+
+markdown_extensions:
+    - toc:
+        permalink: True
+        separator: "_"
+        toc_depth: 3
+
+  
+plugins:
+  - search
+  - mkdocstrings
+nav:
+  - Home: index.md
+  - Environments: 
+    - Create and configure: environments.md
+    - Folder Structure: folderstructure.md
+    - Package management: packagemanagement.md
+    - Images: images.md
+  - 'Education':
+    - Courses: education/education.md
+
+  - Collaboration:
+    - Projects: projects.md
+
+  - External services:
+    - Seafile: services/seafile.md
+    - Gitea: services/gitea.md
+
+  - Data storage:
+    - Volumes: volumes.md
+  
+  - Reports:
+    - Applications: reports.md
+
+  - FAQ:
+    - Main: FAQ/Main.md
