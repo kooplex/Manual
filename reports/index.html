@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Applications - Kooplex Documentation</title>
+    <title>Interactive Dashboards and Applications - Kooplex Documentation</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,7 +13,7 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Applications";
+        var mkdocs_page_name = "Interactive Dashboards and Applications";
         var mkdocs_page_input_path = "reports.md";
         var mkdocs_page_url = null;
       </script>
@@ -49,11 +49,11 @@
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../environments/">Create and configure</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../folderstructure/">Folder Structure</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../folderstructure/">Storage and Folders</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../packagemanagement/">Package management</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../images/">Images</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../images/">Environment Images</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Education</span></p>
@@ -73,31 +73,20 @@
                   <li class="toctree-l1"><a class="reference internal" href="../services/gitea/">Gitea</a>
                   </li>
               </ul>
-              <p class="caption"><span class="caption-text">Data storage</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="" href="../volumes.md">Volumes</a>
-                  </li>
-              </ul>
               <p class="caption"><span class="caption-text">Reports</span></p>
               <ul class="current">
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Applications</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Interactive Dashboards and Applications</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#static_or_interactive_html">Static or interactive html</a>
+    <li class="toctree-l2"><a class="reference internal" href="#from_local_files">From local files</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#r_shiny_dashboards">R shiny dashboards</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#plotly_dash">Plotly dash</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#bokeh_server">Bokeh server</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#applications_and_rest_services">Applications and REST services</a>
+    <li class="toctree-l2"><a class="reference internal" href="#from_repositories">From repositories</a>
     </li>
     </ul>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">FAQ</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../FAQ/Main/">Main</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../FAQ/General/">General</a>
                   </li>
               </ul>
       </div>
@@ -115,7 +104,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
           <li class="breadcrumb-item">Reports</li>
-      <li class="breadcrumb-item active">Applications</li>
+      <li class="breadcrumb-item active">Interactive Dashboards and Applications</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -124,16 +113,30 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <p>Quickstart for creating a plotly report:
-<img alt="" src="/static/report_newplotly-example.png" /></p>
-<h2 id="report_types">Report types<a class="headerlink" href="#report_types" title="Permanent link">&para;</a></h2>
-<h3 id="static_or_interactive_html">Static or interactive html<a class="headerlink" href="#static_or_interactive_html" title="Permanent link">&para;</a></h3>
-<p>Anything that is converted into html can be served as a <em>static</em> html.</p>
-<h3 id="r_shiny_dashboards">R shiny dashboards<a class="headerlink" href="#r_shiny_dashboards" title="Permanent link">&para;</a></h3>
-<p>The server will look for an <strong>app.R</strong> or <strong>ui.R</strong>.</p>
-<p>Here are some <a href="https://rstudio.github.io/shinydashboard/examples.html">shiny examples</a> and a <a href="https://shiny.rstudio.com/tutorial/">tutorial</a>.
-Example shiny dashboard: <img alt="" src="/static/shiny-example.png" /></p>
-<h3 id="plotly_dash">Plotly dash<a class="headerlink" href="#plotly_dash" title="Permanent link">&para;</a></h3>
+                <h1 id="prepare_your_reports">Prepare your reports<a class="headerlink" href="#prepare_your_reports" title="Permanent link">&para;</a></h1>
+<h2 id="from_local_files">From local files<a class="headerlink" href="#from_local_files" title="Permanent link">&para;</a></h2>
+<p>A report or application usually consist of several files and folders in order to contain</p>
+<ul>
+<li>the necessary code for creating it</li>
+<li>the data that needs to be visualized</li>
+<li>and the environment, necessary packages on which the code depends</li>
+<li>an executable startup file 'start.sh' that contains the command to run the code</li>
+</ul>
+<p>Place these files into separate folders: <code>report_prepare/&lt;project_name&gt;</code>. The <code>New Report</code> form will pick up these folders.</p>
+<p><img alt="" src="/static/show_report_prepare_folder.png" /></p>
+<p><img alt="" src="/static/show_report_folder.png" /></p>
+<h2 id="from_repositories">From repositories<a class="headerlink" href="#from_repositories" title="Permanent link">&para;</a></h2>
+<p>It is also possible to upload a token for a version control system (e.g. github, gitea) and then repositories can be selected from the given accounts.</p>
+<h1 id="quickstart_for_creating_a_report">Quickstart for creating a report:<a class="headerlink" href="#quickstart_for_creating_a_report" title="Permanent link">&para;</a></h1>
+<p><img alt="" src="/static/report_newplotly-example.png" /></p>
+<h1 id="report_types">Report types<a class="headerlink" href="#report_types" title="Permanent link">&para;</a></h1>
+<ul>
+<li><strong>Static</strong>: anything that is converted into html can be served as a <em>static</em> html
+or </li>
+<li><strong>Interactive html</strong>: a server is running in the backend, which processes commands coming from the user interface and therefore it can access all kind of resources to dynamically change figures in the report</li>
+</ul>
+<p>An <em>url</em> is provided for each report at which it can be visited in the browser. In case of APIs the same url van be used for access.</p>
+<h2 id="plotly_dash">Plotly dash<a class="headerlink" href="#plotly_dash" title="Permanent link">&para;</a></h2>
 <p>Here is an <a href="/static/plotly-dash-app-example.py">example code</a></p>
 <p>The important steps are to use the proper environmental variables when creating the <em>Dash</em> instance and the <em>server</em> object</p>
 <pre><code>REPORT_URL = os.getenv(&quot;REPORT_URL&quot;)
@@ -144,18 +147,26 @@ HOSTNAME = os.getenv(&quot;HOSTNAME&quot;)
 app.run_server(debug=False, port=REPORT_PORT, host=HOSTNAME)
 </code></pre>
 <p>Example plotly plots and dashboards: <img alt="" src="/static/plotly-example.png" /></p>
-<h3 id="bokeh_server">Bokeh server<a class="headerlink" href="#bokeh_server" title="Permanent link">&para;</a></h3>
+<h2 id="r_shiny_dashboards">R shiny dashboards<a class="headerlink" href="#r_shiny_dashboards" title="Permanent link">&para;</a></h2>
+<p>The server will look for an <strong>app.R</strong> or <strong>ui.R</strong>.</p>
+<p>Here are some <a href="https://rstudio.github.io/shinydashboard/examples.html">shiny examples</a> and a <a href="https://shiny.rstudio.com/tutorial/">tutorial</a>.
+Example shiny dashboard: <img alt="" src="/static/shiny-example.png" /></p>
+<h2 id="bokeh_server">Bokeh server<a class="headerlink" href="#bokeh_server" title="Permanent link">&para;</a></h2>
 <p>The image runs automatically the following command:</p>
 <pre><code>/opt/conda/bin/bokeh serve  $REPORT_FOLDER --prefix ${REPORT_URL} --allow-websocket-origin k8plex-test.vo.elte.hu --port $REPORT_PORT 
 </code></pre>
 <p>It will look for a <strong>main.py</strong> or <strong>main.ipynb</strong> file</p>
-<h3 id="applications_and_rest_services">Applications and REST services<a class="headerlink" href="#applications_and_rest_services" title="Permanent link">&para;</a></h3>
+<h1 id="images_for_reports">Images for reports<a class="headerlink" href="#images_for_reports" title="Permanent link">&para;</a></h1>
+<p>For extra python packages a <code>requirements.txt</code> needs to be placed in the report's folder.<br>
+Upon request a more customized image can be built with the necessary system packages.</p>
+<h2 id="applications_and_rest_services">Applications and REST services<a class="headerlink" href="#applications_and_rest_services" title="Permanent link">&para;</a></h2>
+<p>Application can be served adn APIs as well.</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href="../services/gitea/" class="btn btn-neutral float-left" title="Gitea"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../FAQ/Main/" class="btn btn-neutral float-right" title="Main">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../FAQ/General/" class="btn btn-neutral float-right" title="General">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -181,7 +192,7 @@ app.run_server(debug=False, port=REPORT_PORT, host=HOSTNAME)
       <span><a href="../services/gitea/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../FAQ/Main/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../FAQ/General/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
