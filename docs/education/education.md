@@ -17,11 +17,11 @@ It is also possible to create a course for an existing Canvas course. In order t
 !["/static/edu-course-config.gif"](/static/edu-course-config.gif) 
 
 <div id="edunewass"></div>
-* Add new assignment
+#### Add new assignment
 !["/static/edu-new-ass.png"](/static/edu-new-ass.png)
 
 <div id="edumanageass"></div>
-* Manage assignments
+#### Manage assignments
 !["/static/edu-manage-ass.png"](/static/edu-manage-ass.png)
 
 

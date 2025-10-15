@@ -16,6 +16,10 @@ Docker images provide a consistent environment for browser-based applications, e
 * **JupyterLab** – An advanced, flexible interface for working with Jupyter notebooks, code, and data, offering a more powerful user experience with support for multiple documents and activities.
 * **RStudio** – An integrated development environment (IDE) for R, providing tools for writing scripts, running code, and visualizing data in a user-friendly interface.
 
+### Custom Images
+Based on the above images a more customized image van be created if needed.<br>
+For report images See [Reports](/reports/)
+
 ## Remote Jupyter Kernels in VSCode
 You can connect your desktop VSCode to remote Jupyter kernels hosted at [https://kooplex-example.hu/notebook](https://kooplex-example.hu/notebook):
 
