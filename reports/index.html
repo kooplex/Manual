@@ -123,8 +123,8 @@
 <li>an executable startup file 'start.sh' that contains the command to run the code</li>
 </ul>
 <p>Place these files into separate folders: <code>report_prepare/&lt;project_name&gt;</code>. The <code>New Report</code> form will pick up these folders.</p>
-<p><img alt="" src="/static/show_report_prepare_folder.png" /></p>
-<p><img alt="" src="/static/show_report_folder.png" /></p>
+<p><img alt="" src="../static/show_report_prepare_folder.png" /></p>
+<p><img alt="" src="../static/show_report_folder.png" /></p>
 <h2 id="from_repositories">From repositories<a class="headerlink" href="#from_repositories" title="Permanent link">&para;</a></h2>
 <p>It is also possible to upload a token for a version control system (e.g. github, gitea) and then repositories can be selected from the given accounts.</p>
 <h1 id="quickstart_for_creating_a_report">Quickstart for creating a report:<a class="headerlink" href="#quickstart_for_creating_a_report" title="Permanent link">&para;</a></h1>
@@ -146,7 +146,7 @@ REPORT_PORT = os.getenv(&quot;REPORT_PORT&quot;)
 HOSTNAME = os.getenv(&quot;HOSTNAME&quot;)
 app.run_server(debug=False, port=REPORT_PORT, host=HOSTNAME)
 </code></pre>
-<p>Example plotly plots and dashboards: <img alt="" src="/static/plotly-example.png" /></p>
+<p>Example plotly plots and dashboards: <img alt="" src="../static/plotly-example.png" /></p>
 <h2 id="r_shiny_dashboards">R shiny dashboards<a class="headerlink" href="#r_shiny_dashboards" title="Permanent link">&para;</a></h2>
 <p>The server will look for an <strong>app.R</strong> or <strong>ui.R</strong>.</p>
 <p>Here are some <a href="https://rstudio.github.io/shinydashboard/examples.html">shiny examples</a> and a <a href="https://shiny.rstudio.com/tutorial/">tutorial</a>.
