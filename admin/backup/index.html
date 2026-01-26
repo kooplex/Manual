@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://kooplex.github.io/Manual/settings/usertokens/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://kooplex.github.io/Manual/admin/backup/" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Usertokens - Kooplex Documentation</title>
+    <title>Backup and Restore - Kooplex Documentation</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -14,9 +14,9 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Usertokens";
-        var mkdocs_page_input_path = "settings/usertokens.md";
-        var mkdocs_page_url = "/Manual/settings/usertokens/";
+        var mkdocs_page_name = "Backup and Restore";
+        var mkdocs_page_input_path = "admin/backup.md";
+        var mkdocs_page_url = "/Manual/admin/backup/";
       </script>
     
     <!--[if lt IE 9]>
@@ -87,18 +87,20 @@
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Admin guide</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../admin/installation/">Installation</a>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../admin/configuration/">Configuration</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../configuration/">Configuration</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../admin/usermanagement/">User Management</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../usermanagement/">User Management</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../admin/maintenance/">Maintenance</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../maintenance/">Maintenance</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../admin/backup/">Backup and Restore</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Backup and Restore</a>
+    <ul class="current">
+    </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../admin/upgrading/">Upgrading Kooplex</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../upgrading/">Upgrading Kooplex</a>
                   </li>
               </ul>
       </div>
@@ -115,7 +117,8 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">Usertokens</li>
+          <li class="breadcrumb-item">Admin guide</li>
+      <li class="breadcrumb-item active">Backup and Restore</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -124,10 +127,70 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h2 id="tbc">TBC<a class="headerlink" href="#tbc" title="Permanent link">&para;</a></h2>
+                <h1 id="backup_strategy_quick_actionable_plan">Backup strategy — quick actionable plan<a class="headerlink" href="#backup_strategy_quick_actionable_plan" title="Permanent link">&para;</a></h1>
+<p>Scope: 1) Django MySQL DB (Hub)<br />
+2) LDAP (auth)<br />
+3) User homes (with quotas)<br />
+4) Project data</p>
+<p>General principles
+- Define RPO/RTO per service (e.g., DB: RPO=1h, RTO&lt;1h; homes: RPO=24h).<br />
+- Maintain offsite copies + immutable/retention policy (daily/weekly/monthly).<br />
+- Encrypt backups at rest and in transit; manage keys separately.<br />
+- Automate, monitor, and test restores regularly (drills).<br />
+- Keep configuration and secrets (e.g., /etc, DB users, schema migrations) in backups.</p>
+<p>1) Django MySQL database (Hub)
+- Use logical + physical backups:
+    - Logical: mysqldump for schema-level portability and quick point-in-time snapshots.
+        - Example: mysqldump --single-transaction --routines --events -u backup -p hub_db &gt; hub-YYYYMMDD.sql
+    - Physical/hot: Percona XtraBackup for large DBs and faster restores.
+- Consider binlog-based point-in-time recovery (enable &amp; archive binary logs).
+- Store backups in compressed, encrypted store (restic/borg/s3 with SSE).
+- Verify: restore to staging, run Django migrations and sanity queries.
+- Retention: keep hourly recent (24), daily (7), weekly (4), monthly (12).</p>
+<p>2) LDAP (auth layer)
+- Export LDIF regularly using slapcat (atomic export).
+    - Example: slapcat -v -l ldap-YYYYMMDD.ldif
+- For file-based DBs (e.g., bdb/mdb), use filesystem snapshots (LVM/ZFS) or stop slapd and copy DB files.
+- Backup ACLs and config (slapd.conf / cn=config export).
+- Verify: restore LDIF to a test LDAP instance with slapadd and validate user objects and passwords.</p>
+<p>3) User homes (with preset quota)
+- Prefer filesystem snapshots (ZFS snapshots or LVM snapshots) to preserve quotas, UID/GID, ACLs and avoid quota inconsistencies.
+    - If using ZFS: zfs snapshot dataset@YYYYMMDD and send to backup pool.
+- If snapshot not available, use rsync with flags to preserve metadata:
+    - rsync -aHAX --numeric-ids --delete --compress /home/ backup-host:/store/homes/
+    - Options: -a (archive), -H (hard links), -A (ACLs), -X (xattrs).
+- Quotas: snapshot-based backups preserve quota metadata. If using file copy, reapply quotas on restore or include quota metadata export.
+- Store incremental backups (borg/restic) to save space; ensure they preserve xattrs/ACLs.
+- Verify: mount backup, check file ownerships, permissions and quota usage on a test host.</p>
+<p>4) Project data
+- Identify project types:
+    - Git repos: mirror with git clone --mirror or use git bundle; also backup repo storage paths.
+    - Large binary datasets: snapshot or use deduplicating storage (borg/restic) or object storage (S3/MinIO).
+- Use repository-aware backups for quicker restores (git bundle or mirror) plus periodic filesystem snapshots for working trees and CI artifacts.
+- Preserve metadata, symlinks, executables.
+- Verify: clone mirror/bundle to test and run CI or tests.</p>
+<p>Tooling recommendations
+- Backup engine: restic or borg for dedup, encryption, reliability; or use cloud snapshots (EBS, S3) combined with local tools.
+- Orchestration: cron/systemd timers, or use Ansible/backup scripts; for complex infra use Borgmatic or Kopia.
+- Monitoring: alert on job failures, size growth, verify checksums.</p>
+<p>Restore checklist (for any service)
+1. Choose backup timestamp that matches RPO.<br />
+2. Restore to isolated staging first; validate integrity and functionality.<br />
+3. For DBs, apply binlogs/PITR if needed.<br />
+4. For LDAP, use slapadd and reindex.<br />
+5. Re-apply quotas and verify permissions for homes.<br />
+6. Confirm client connectivity and run smoke tests.</p>
+<p>Next steps (suggested)
+- Provide sizes, acceptable RTO/RPO, and current storage to produce concrete schedules and retention.<br />
+- Implement one service end-to-end (backup, encryption, offsite, restore test) before rolling out others.</p>
+<p>GitHub Copilot</p>
               
             </div>
           </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../maintenance/" class="btn btn-neutral float-left" title="Maintenance"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../upgrading/" class="btn btn-neutral float-right" title="Upgrading Kooplex">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
 
   <hr/>
 
@@ -149,6 +212,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
+      <span><a href="../maintenance/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../upgrading/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
         <link href="../assets/_mkdocstrings.css" rel="stylesheet" />
+        <link href="../stylesheets/custom.css" rel="stylesheet" />
     
       <script>
         // Current page data
@@ -53,17 +54,31 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Package management</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#create_a_conda_environment">Create a conda environment</a>
+    <li class="toctree-l2"><a class="reference internal" href="#1_conda_the_heavyweight_multi-language_manager">1. Conda: The Heavyweight Multi-Language Manager</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#use_a_conda_environment">Use a conda environment</a>
+    <li class="toctree-l2"><a class="reference internal" href="#2_uv_the_modern_speed_demon">2. uv: The Modern Speed Demon</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#3_pyenv_the_dedicated_version_switcher">3. pyenv: The Dedicated Version Switcher</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#with_uv">With uv</a>
+    <li class="toctree-l3"><a class="reference internal" href="#4_poetry_the_structured_architect">4. Poetry: The Structured Architect</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#with_poetry">With poetry</a>
+        </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#with_pyenv">With pyenv</a>
+    <li class="toctree-l2"><a class="reference internal" href="#quick_comparison_table">Quick Comparison Table</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#usage_of_conda">Usage of Conda</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#non-python_applications">non-Python applications</a>
+    <li class="toctree-l3"><a class="reference internal" href="#use_a_conda_environment">Use a conda environment</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#usage_of_uv">Usage of UV</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#usage_of_poetry">Usage of Poetry</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#usage_of_pyenv">Usage of Pyenv</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#non-python_applications">non-Python applications</a>
+    </li>
+        </ul>
     </li>
     </ul>
                   </li>
@@ -86,6 +101,8 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../services/gitea/">Gitea</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../services/teleport/">Teleport</a>
+                  </li>
               </ul>
               <p class="caption"><span class="caption-text">Reports</span></p>
               <ul>
@@ -95,6 +112,21 @@
               <p class="caption"><span class="caption-text">FAQ</span></p>
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../FAQ/General/">General</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Admin guide</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../admin/installation/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../admin/configuration/">Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../admin/usermanagement/">User Management</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../admin/maintenance/">Maintenance</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../admin/backup/">Backup and Restore</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../admin/upgrading/">Upgrading Kooplex</a>
                   </li>
               </ul>
       </div>
@@ -121,10 +153,98 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h2 id="package_management_for_python">Package management for Python<a class="headerlink" href="#package_management_for_python" title="Permanent link">&para;</a></h2>
+                <h1 id="package_and_project_management_for_python">Package and Project management for Python<a class="headerlink" href="#package_and_project_management_for_python" title="Permanent link">&para;</a></h1>
+<p>The Python packaging ecosystem has evolved from a fragmented set of manual tools into a sophisticated landscape of "all-in-one" managers. The primary goal of these tools is to solve the "it works on my machine" problem by ensuring that every developer (and production server) uses the exact same Python version and library versions.</p>
+<p>While <strong>pyenv</strong> and <strong>Poetry</strong> represent the "modular" era—where you pick one tool for the Python version and another for the libraries—<strong>Conda</strong> and <strong>uv</strong> represent the "unified" era, where a single tool handles the entire stack.</p>
+<hr />
+<h2 id="1_conda_the_heavyweight_multi-language_manager">1. Conda: The Heavyweight Multi-Language Manager<a class="headerlink" href="#1_conda_the_heavyweight_multi-language_manager" title="Permanent link">&para;</a></h2>
+<p>Jump to <a href="#withconda"> usage --&gt;</a></p>
+<p><strong>Significance:</strong> it manages binaries for C++, R, and GPU drivers (like CUDA). It is the gold standard for <strong>Data Science</strong> and <strong>Machine Learning</strong> where non-Python system dependencies are common.</p>
+<ul>
+<li><strong>Similarity:</strong> Like the others, it creates isolated environments.</li>
+<li><strong>Difference:</strong> It installs pre-compiled binaries from its own "channels" (like Conda-Forge) rather than just PyPI, allowing it to manage complex system-level libraries that pip cannot.</li>
+</ul>
+<h2 id="2_uv_the_modern_speed_demon">2. uv: The Modern Speed Demon<a class="headerlink" href="#2_uv_the_modern_speed_demon" title="Permanent link">&para;</a></h2>
+<p>Jump to <a href="#uv"> usage --&gt;</a></p>
+<p><strong>Significance:</strong> Written in Rust, <strong>uv</strong> is designed to be "unreasonably fast"—often 10–100x faster than pip. It is a unified tool that effectively replaces pyenv, pip, and Poetry in one go.</p>
+<ul>
+<li><strong>Similarity:</strong> It handles Python versions (like pyenv), dependencies (like Poetry), and virtual environments.</li>
+<li><strong>Difference:</strong> Its performance is unmatched. While Poetry can be slow at "resolving" which versions of libraries work together, uv performs this logic in milliseconds.</li>
+</ul>
+<h3 id="3_pyenv_the_dedicated_version_switcher">3. pyenv: The Dedicated Version Switcher<a class="headerlink" href="#3_pyenv_the_dedicated_version_switcher" title="Permanent link">&para;</a></h3>
+<p>Jump to <a href="#pyenv"> usage --&gt;</a></p>
+<p><strong>Significance:</strong> Pyenv follows the Unix philosophy of "doing one thing well." Its only job is to install and switch between different versions of the Python interpreter itself (e.g., switching from Python 3.9 to 3.12).</p>
+<ul>
+<li><strong>Similarity:</strong> It shares the goal of environment isolation but only at the "global" or "interpreter" level.</li>
+<li><strong>Difference:</strong> It does <strong>not</strong> manage your libraries (numpy, pandas, etc.). You almost always use it in tandem with another tool like Poetry or Pip.</li>
+</ul>
+<h3 id="4_poetry_the_structured_architect">4. Poetry: The Structured Architect<a class="headerlink" href="#4_poetry_the_structured_architect" title="Permanent link">&para;</a></h3>
+<p>Jump to <a href="#poetry"> usage --&gt;</a></p>
+<p><strong>Significance:</strong> Poetry revolutionized Python development by introducing a deterministic "lockfile" (<code>poetry.lock</code>). It focuses on the <strong>Project Life Cycle</strong>, handling everything from dependency resolution to building and publishing your code to PyPI.</p>
+<ul>
+<li><strong>Similarity:</strong> Like Conda and uv, it manages virtual environments and library dependencies.</li>
+<li><strong>Difference:</strong> It uses the <code>pyproject.toml</code> standard to define project metadata and is designed primarily for developers building shareable packages or libraries.</li>
+</ul>
+<hr />
+<h2 id="quick_comparison_table">Quick Comparison Table<a class="headerlink" href="#quick_comparison_table" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Feature</th>
+<th style="text-align: left;">Conda</th>
+<th style="text-align: left;">pyenv</th>
+<th style="text-align: left;">Poetry</th>
+<th style="text-align: left;">uv</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Primary Goal</strong></td>
+<td style="text-align: left;">Data Science / Multi-language</td>
+<td style="text-align: left;">Managing Python versions</td>
+<td style="text-align: left;">Project &amp; Dependency Mgmt</td>
+<td style="text-align: left;">Fast, All-in-one Mgmt</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Written In</strong></td>
+<td style="text-align: left;">Python / C</td>
+<td style="text-align: left;">Shell / C</td>
+<td style="text-align: left;">Python</td>
+<td style="text-align: left;"><strong>Rust</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Manages Python?</strong></td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;"><strong>Yes (Primary focus)</strong></td>
+<td style="text-align: left;">Partially</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Manages Packages?</strong></td>
+<td style="text-align: left;">Yes (Conda-Forge)</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">Yes (PyPI)</td>
+<td style="text-align: left;">Yes (PyPI)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Best For</strong></td>
+<td style="text-align: left;">Heavy ML / GPU / Science</td>
+<td style="text-align: left;">General version switching</td>
+<td style="text-align: left;">Application / Library devs</td>
+<td style="text-align: left;">High-performance workflows</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Lockfile</strong></td>
+<td style="text-align: left;"><code>environment.yml</code></td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;"><code>poetry.lock</code></td>
+<td style="text-align: left;"><code>uv.lock</code></td>
+</tr>
+</tbody>
+</table>
 <div id="withconda"></div>
 
-<h3 id="create_a_conda_environment">Create a <code>conda</code> environment<a class="headerlink" href="#create_a_conda_environment" title="Permanent link">&para;</a></h3>
+<h3 id="usage_of_conda">Usage of Conda<a class="headerlink" href="#usage_of_conda" title="Permanent link">&para;</a></h3>
 <pre><code class="language-bash">&gt; conda create -y --name new_env # Create the nw environment
 &gt; . /opt/conda/bin/activate # Activate it
 &gt; conda activate new_env
@@ -141,7 +261,7 @@
 <p>Before activating a conda environment type:</p>
 <pre><code class="language-bash">&gt; . /opt/conda/bin/activate
 </code></pre>
-<h4 id="1_method_conda_activate_env_name">1. method <code>conda activate &lt;env_name&gt;</code><a class="headerlink" href="#1_method_conda_activate_env_name" title="Permanent link">&para;</a></h4>
+<h4 id="method_1_conda_activate_env_name">Method 1. <code>conda activate &lt;env_name&gt;</code><a class="headerlink" href="#method_1_conda_activate_env_name" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p>for a locally created conda environment - with <code>conda create -n &lt;env_name&gt;</code> that resides in <code>~/.conda/envs/&lt;env_name&gt;</code></p>
@@ -154,7 +274,7 @@
 <pre><code>&gt; . /opt/conda/bin/activate
 &gt; conda activate tensorflow
 </code></pre>
-<h4 id="2_method_conda_activate_path_to_env">2. method <code>conda activate &lt;path_to_env&gt;</code><a class="headerlink" href="#2_method_conda_activate_path_to_env" title="Permanent link">&para;</a></h4>
+<h4 id="method_2_conda_activate_path_to_env">Method 2. <code>conda activate &lt;path_to_env&gt;</code><a class="headerlink" href="#method_2_conda_activate_path_to_env" title="Permanent link">&para;</a></h4>
 <ul>
 <li>for a conda environment created into folder or attachment - for example with the command 'conda create -p /v/attachments/<attachment_name>'</li>
 </ul>
@@ -170,28 +290,47 @@ E.g.</p>
 <p>List available kernels to check whether it worked</p>
 <pre><code>jupyter-kernelspec list
 </code></pre>
-<p><img alt="edu-activate-condaenv.gif" src="/kooplex-manual/environment/activate-condaenv.gif" /></p>
+<p><img alt="edu-activate-condaenv.gif" src="/static/activate-condaenv.gif" /></p>
 <div id="uv"> </div>
 
-<h3 id="with_uv">With <code>uv</code><a class="headerlink" href="#with_uv" title="Permanent link">&para;</a></h3>
+<h3 id="usage_of_uv">Usage of UV<a class="headerlink" href="#usage_of_uv" title="Permanent link">&para;</a></h3>
 <p>An extremely fast Python package installer and resolver, written in Rust
-Read about <code>uv</code> here:
-* https://astral.sh/blog/uv
-* https://github.com/astral-sh/uv</p>
-<p>Activate it with:</p>
-<pre><code>&gt; . /opt/python-packages/bin/activate
+Read about <code>uv</code> here:</p>
+<ul>
+<li><a href="https://docs.astral.sh/uv/guides/">https://docs.astral.sh/uv/</a></li>
+<li><a href="https://astral.sh/blog/uv">https://astral.sh/blog/uv</a></li>
+<li><a href="https://github.com/astral-sh/uv">https://github.com/astral-sh/uv</a></li>
+</ul>
+<p>Maybe the simplest and most useful way to get started with uv and assure reproducibility is to create a project <a href="https://docs.astral.sh/uv/guides/projects/">https://docs.astral.sh/uv/guides/projects/</a>:</p>
+<pre><code>mkdir hello-world
+cd hello-world
+uv init
 </code></pre>
-<p>Then install a package </p>
+<p>uv will create the following files:</p>
+<pre><code>├── .gitignore
+├── .python-version
+├── README.md
+├── main.py
+└── pyproject.toml
+</code></pre>
+<p>The main.py file contains a simple "Hello world" program. Try it out with uv run:</p>
+<pre><code>uv run main.py
+</code></pre>
+<p>Then you can install packages</p>
+<pre><code>uv add sqlalchemy pandas
+</code></pre>
+<p>or</p>
 <pre><code>uv pip install  sqlalchemy pandas
 </code></pre>
+<p>For further details on usage consult with the official <a href="https://docs.astral.sh/uv/guides/projects/">documentation</a></p>
 <div id="poetry"> </div>
 
-<h3 id="with_poetry">With <code>poetry</code><a class="headerlink" href="#with_poetry" title="Permanent link">&para;</a></h3>
+<h3 id="usage_of_poetry">Usage of Poetry<a class="headerlink" href="#usage_of_poetry" title="Permanent link">&para;</a></h3>
 <p>Poetry-kernel is installed to v8 images, therefore it is possible to use poetry environments in notebooks.
 Visit https://python-poetry.org/ for documentation.</p>
 <div id="pyenv"> </div>
 
-<h3 id="with_pyenv">With <code>pyenv</code><a class="headerlink" href="#with_pyenv" title="Permanent link">&para;</a></h3>
+<h3 id="usage_of_pyenv">Usage of Pyenv<a class="headerlink" href="#usage_of_pyenv" title="Permanent link">&para;</a></h3>
 <p>witch between Python versions</p>
 <p>To select a Pyenv-installed Python as the version to use, run one of the following commands:</p>
 <pre><code>pyenv shell &lt;version&gt; -- select just for current shell session
