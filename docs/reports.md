@@ -20,16 +20,16 @@ A report or application usually consist of several files and folders in order to
 
 Place these files into separate folders: `report_prepare/<project_name>`. The `New Report` form will pick up these folders.
 
-![](/static/show_report_prepare_folder.png)
+![](static/show_report_prepare_folder.png)
 
-![](/static/show_report_folder.png)
+![](static/show_report_folder.png)
 
 ## From repositories
 It is also possible to upload a token for a version control system (e.g. github, gitea) and then repositories can be selected from the given accounts.
 
 # Quickstart for creating a report:
 
-![](/static/report_newplotly-example.png)
+![](static/report_newplotly-example.png)
 
 
 # Report types
@@ -41,7 +41,7 @@ or
 An *url* is provided for each report at which it can be visited in the browser. In case of APIs the same url van be used for access.
 
 ## Plotly dash
-Here is an [example code](/static/plotly-dash-app-example.py)
+Here is an [example code](static/plotly-dash-app-example.py)
 
 The important steps are to use the proper environmental variables when creating the *Dash* instance and the *server* object
 ```
@@ -52,13 +52,13 @@ REPORT_PORT = os.getenv("REPORT_PORT")
 HOSTNAME = os.getenv("HOSTNAME")
 app.run_server(debug=False, port=REPORT_PORT, host=HOSTNAME)
 ```
-Example plotly plots and dashboards: ![](/static/plotly-example.png)
+Example plotly plots and dashboards: ![](static/plotly-example.png)
 
 ## R shiny dashboards
 The server will look for an **app.R** or **ui.R**.
 
 Here are some [shiny examples](https://rstudio.github.io/shinydashboard/examples.html) and a [tutorial](https://shiny.rstudio.com/tutorial/).
-Example shiny dashboard: ![](/static/shiny-example.png)
+Example shiny dashboard: ![](static/shiny-example.png)
 
 
 ## Bokeh server

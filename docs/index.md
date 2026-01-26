@@ -25,13 +25,6 @@ Kooplex brings together the power of interactive notebooks (such as Jupyter and 
 
 ---
 
-## Get Started
-
-- Explore the [User Guide](README.md) for a detailed overview.
-- Check out [User working environments](environments) to set up your first project.
-- Visit the [FAQ](FAQ/Main.md) if you have questions or run into issues.
-
----
 
 Kooplex is open source and welcomes contributions from the community. For more information, visit the [official Kooplex page](https://kooplex.github.io/) or the [source code repository](https://github.com/kooplex).
 

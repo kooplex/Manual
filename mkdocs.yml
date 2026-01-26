@@ -1,4 +1,5 @@
 site_name: Kooplex Documentation
+site_url: https://kooplex.github.io/Manual/
 theme:
   name: readthedocs
   highlightjs: true
@@ -8,13 +9,15 @@ theme:
     - navigation.sections
   logo: static/logo-halfcolored.png
 
+extra_css:
+  - stylesheets/custom.css
+
 markdown_extensions:
     - toc:
         permalink: True
         separator: "_"
         toc_depth: 3
 
-  
 plugins:
   - search
   - mkdocstrings
@@ -34,9 +37,18 @@ nav:
   - External services:
     - Seafile: services/seafile.md
     - Gitea: services/gitea.md
+    - Teleport: services/teleport.md
   
   - Reports:
     - Interactive Dashboards and Applications: reports.md
 
   - FAQ:
     - General: FAQ/General.md
+
+  - Admin guide:
+    - Installation: admin/installation.md
+    - Configuration: admin/configuration.md
+    - User Management: admin/usermanagement.md
+    - Maintenance: admin/maintenance.md
+    - Backup and Restore: admin/backup.md
+    - Upgrading Kooplex: admin/upgrading.md

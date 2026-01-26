@@ -1,0 +1,2 @@
+# My environments seems to be launched but the browser show me the 'keep waiting' page.
+It might be, that after and image upgrade the image needs to be reloaded to the given server and it might take 5-10 minutes in the worst case. If this problem persists then let the administrators know about it !
