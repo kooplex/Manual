@@ -9,15 +9,15 @@ dateCreated: 2023-02-22T21:09:16.265Z
 ---
 
 ### Environment setting
-![Authy](teleport/env-config-teleport.png)
+![Authy](../static/teleport/env-config-teleport.png)
 
 
 #### Install
-Teleport lets you login with a two-factor authentication, so you will need to setup an authenticator, such as this: <br>
-![Authy](teleport/authy.svg)
-<img src="teleport/authy.svg" alt="Authy" height=50>  https://play.google.com/store/apps/details?id=com.authy.authy&hl=en_US&gl=US&pli=1
+Teleport lets you login with a two-factor authentication, so you will need to setup an authenticator, such as Authy: 
+[![Authy](../static/teleport/authy.png)](
+ https://play.google.com/store/apps/details?id=com.authy.authy&hl=en_US&gl=US&pli=1)
 
-You will need the tsh command (version 14.\*), that can be obtained here for [linux](https://cdn.teleport.dev/teleport_14.3.31_amd64.deb) and (windows)[https://cdn.teleport.dev/Teleport%20Connect%20Setup-14.3.31.exe]
+You will need the tsh command (version 14.\* or 15.*), that can be obtained here for [linux](https://cdn.teleport.dev/teleport_14.3.31_amd64.deb) and (windows)[https://cdn.teleport.dev/Teleport%20Connect%20Setup-14.3.31.exe]
 
 #### Registration
 Upon request the administrators will send you a link similar to this `https://teleport.vo.elte.hu:443/web/invite/` with which you can register, activate your account and setup Two Factor Authentication. 
@@ -75,8 +75,8 @@ When the plugin for remote connections is installed to VScode it will list you a
 
 ### Using kernel from Kooplex environments
 Select an existing kernel and enter an url that can be found at Environment Settings->Connections tab.
-![vscode_select_kernel.gif](/kooplex-manual/teleport/vscode_select_kernel.gif)
+![vscode_select_kernel.gif](../static/teleport/vscode_select_kernel.gif)
 
 
 ## Troubleshooting
-[troubleshooting](/kooplex-manual/troubleshooting)
+[troubleshooting](../FAQ/General.md)

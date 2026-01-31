@@ -8,7 +8,7 @@ editor: markdown
 dateCreated: 2022-05-12T15:54:09.926Z
 ---
 
-# Images
+# Images ![docker](static/docker_logo.png)
 Docker images provide a consistent environment for browser-based applications, ensuring that all dependencies and configurations are included. This makes it easy to deploy, update, and scale applications across different systems without compatibility issues. Users benefit from improved reliability and simplified troubleshooting, as each container runs in isolation from the host system.
 
 ## Notebook servers
@@ -18,7 +18,7 @@ Docker images provide a consistent environment for browser-based applications, e
 
 ### Custom Images
 Based on the above images a more customized image van be created if needed.<br>
-For report images See [Reports](/reports/)
+For report images See [Reports](reports.md)
 
 ## Remote Jupyter Kernels in VSCode
 You can connect your desktop VSCode to remote Jupyter kernels hosted at [https://kooplex-example.hu/notebook](https://kooplex-example.hu/notebook):

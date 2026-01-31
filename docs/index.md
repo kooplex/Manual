@@ -13,6 +13,7 @@ Kooplex brings together the power of interactive notebooks (such as Jupyter and 
 - **Publish interactive reports** and dashboards for wider audiences
 - **Teach and learn** using assignment workflows and feedback tools
 
+![](static/kooplex-frontpage.png)
 ---
 
 ## Key Features

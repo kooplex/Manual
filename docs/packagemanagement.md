@@ -121,7 +121,7 @@ List available kernels to check whether it worked
 jupyter-kernelspec list
 ```
 
-![edu-activate-condaenv.gif](/static/activate-condaenv.gif)
+![edu-activate-condaenv.gif](static/activate-condaenv.gif)
 
 
 <div id="uv"> </div>
