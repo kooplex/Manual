@@ -10,7 +10,7 @@ theme:
   logo: static/logo-halfcolored.png
 
 extra_css:
-  - stylesheets/custom.css
+  - /docs/stylesheets/custom.css
 
 markdown_extensions:
     - toc:
@@ -29,7 +29,7 @@ nav:
     - Package management: packagemanagement.md
     - Environment Images: images.md
   - 'Education':
-    - Courses: education/education.md
+    - Courses: education.md
 
   - Collaboration:
     - Projects: projects.md
@@ -42,6 +42,9 @@ nav:
   - Reports:
     - Interactive Dashboards and Applications: reports.md
 
+  - Settings:
+    - Canvas: settings/canvas.md
+    - Uset tokens and keys: settings/usertokens.md
   - FAQ:
     - General: FAQ/General.md
 
