@@ -34,4 +34,6 @@ Funded by ![](../static/cropped-Dokk_logo.png)
 Development of Digital Educational Method Competency Center 
 **Project id**: 2022-1.1.1-KK-2022-00003
 
+![](../static/nkfih_infoblokk.png)
+
 
