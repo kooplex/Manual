@@ -29,11 +29,11 @@ Kooplex brings together the power of interactive notebooks (such as Jupyter and 
 
 Kooplex is open source and welcomes contributions from the community. For more information, visit the [official Kooplex page](https://kooplex.github.io/) or the [source code repository](https://github.com/kooplex).
 
-Funded by ![](../static/cropped-Dokk_logo.png)
+Funded by ![](static/cropped-Dokk_logo.png)
 
 Development of Digital Educational Method Competency Center 
 **Project id**: 2022-1.1.1-KK-2022-00003
 
-![](../static/nkfih_infoblokk.png)
+![](static/nkfih_infoblokk.png)
 
 
