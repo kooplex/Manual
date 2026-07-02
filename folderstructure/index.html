@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
         <link href="../assets/_mkdocstrings.css" rel="stylesheet" />
-        <link href="../stylesheets/custom.css" rel="stylesheet" />
+        <link href="/docs/stylesheets/custom.css" rel="stylesheet" />
     
       <script>
         // Current page data
@@ -61,12 +61,10 @@
     <li class="toctree-l2"><a class="reference internal" href="#course_folders">Course folders</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#further_private_folders">Further private folders</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#seafile_cloud_base_file_sharing">Seafile (cloud base file sharing)</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#repository_from_the_gitea_version_controlled_content">Repository from the Gitea (version controlled content)</a>
+    <li class="toctree-l2"><a class="reference internal" href="#seafile_cloud_base_file_sharing">Seafile (cloud base file sharing)</a>
     </li>
-        </ul>
+    <li class="toctree-l2"><a class="reference internal" href="#repository_from_the_gitea_version_controlled_content">Repository from the Gitea (version controlled content)</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#access_folders_in_rstudio">Access folders in Rstudio</a>
     </li>
@@ -79,7 +77,7 @@
               </ul>
               <p class="caption"><span class="caption-text">Education</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../education/education/">Courses</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../education/">Courses</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Collaboration</span></p>
@@ -99,6 +97,13 @@
               <p class="caption"><span class="caption-text">Reports</span></p>
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../reports/">Interactive Dashboards and Applications</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Settings</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../settings/canvas/">Canvas</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../settings/usertokens/">Uset tokens and keys</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">FAQ</span></p>
@@ -145,37 +150,37 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <p>--&gt; For <img src="/static/rstudio.png" width="35px">studio scroll down <a href="#rstudio"> here</a> for a more detailed explanation</p>
+                <p>--&gt; For <img src="../static/rstudio.png" width="35px">studio scroll down <a href="#rstudio"> here</a> for a more detailed explanation</p>
 <h1 id="root_folder_is_v">Root folder is <code>/v</code><a class="headerlink" href="#root_folder_is_v" title="Permanent link">&para;</a></h1>
-<p>Everything is mounted into this folder (read-only). 
+<p>This folder is read-only and everything is mounted into this one. 
 We have the following folders in <code>/v/</code>:</p>
-<h2 id="private_folders">Private folders<a class="headerlink" href="#private_folders" title="Permanent link">&para;</a></h2>
+<h3 id="private_folders">Private folders<a class="headerlink" href="#private_folders" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>&lt;username&gt;/</code> - a users own, private/home folder</li>
 <li><code>garbage/</code> - automatically archived content (e.g. when a project is deleted)</li>
 </ul>
-<h2 id="project_related_folders">Project related folders<a class="headerlink" href="#project_related_folders" title="Permanent link">&para;</a></h2>
+<h3 id="project_related_folders">Project related folders<a class="headerlink" href="#project_related_folders" title="Permanent link">&para;</a></h3>
 <p>Any number of <a href="../projects/">projects</a> can be attached to each <em>environment</em>, and also a project an be associated with any number of <em>environments</em>. For each project a folder will appear in the <code>projects/</code> folder and in the <code>report_prepare/</code> folder for related reports.</p>
 <ul>
-<li><code>projects/</code> - multiple <a href="/projects">projects</a> can be mounted to an environment. Share data with collaborators</li>
-<li><code>report_prepare/</code> - a folder for each project to place all files and data for a report. See <a href="/reports">reports</a></li>
+<li><code>projects/</code> - multiple <a href="../projects/">projects</a> can be mounted to an environment. Share data with collaborators</li>
+<li><code>report_prepare/</code> - a folder for each project to place all files and data for a report. See <a href="../reports/">reports</a></li>
 </ul>
-<h2 id="storage_folders">Storage folders<a class="headerlink" href="#storage_folders" title="Permanent link">&para;</a></h2>
+<h3 id="storage_folders">Storage folders<a class="headerlink" href="#storage_folders" title="Permanent link">&para;</a></h3>
 <p><em>Volumes</em> are large and/or read-only, already existing datasets and <em>attachments</em> are user created storage spaces for smaller datasets, applications etc. for sharing it between <em>projects</em> <em>reports</em>. These storages can be attached to the <em>environments</em> and each will appear under </p>
 <ul>
-<li><code>volumes/</code> - <a href="#volume">read-only datasets</a> and <a href="#attachment">storage</a> for publicly shared data, programs, config files etc
+<li><code>volumes/</code> - read-only datasets and storagefor publicly shared data, programs, config files etc
   and</li>
-<li><code>attachments/</code> - <a href="#attachment">storage</a> for publicly shared data, programs, config files etc
+<li><code>attachments/</code> - storage for publicly shared data, programs, config files etc
   folders.</li>
 </ul>
-<h2 id="course_folders">Course folders<a class="headerlink" href="#course_folders" title="Permanent link">&para;</a></h2>
-<p>Any number of <a href="../education/education/">courses</a> can be set for each <em>environment</em>, and also a c<em>course</em> can be associated with any number of <em>environments</em>. For each <em>course</em> the relevant folders will appear in the <code>courses/</code> folder.</p>
+<h3 id="course_folders">Course folders<a class="headerlink" href="#course_folders" title="Permanent link">&para;</a></h3>
+<p>Any number of <a href="../education/">courses</a> can be set for each <em>environment</em>, and also a c<em>course</em> can be associated with any number of <em>environments</em>. For each <em>course</em> the relevant folders will appear in the <code>courses/</code> folder.</p>
 <ul>
 <li>
 <p><code>courses/</code> - several folders for each course</p>
 <ul>
 <li>
-<p><code>&lt;course_name&gt;.assignment_prepare/</code> - Put the content of a future assignment into a separate folder. It will be selectable from the <em>Education menu</em> -&gt; <em>Assignment management</em> -&gt; <em>New assignment</em> tab (for Teacher's only, <a href="../education/education/">See how to add new assignment</a>)</p>
+<p><code>&lt;course_name&gt;.assignment_prepare/</code> - Put the content of a future assignment into a separate folder. It will be selectable from the <em>Education menu</em> -&gt; <em>Assignment management</em> -&gt; <em>New assignment</em> tab (for Teacher's only, <a href="../education/">See how to add new assignment</a>)</p>
 </li>
 <li>
 <p><code>&lt;course_name&gt;.assignments/</code> - All students' assignment (working) folder is placed here. At submission a snapshot will be created from these folders and it will be copied to the teachers' correct folder after submission. </p>
@@ -185,22 +190,22 @@ We have the following folders in <code>/v/</code>:</p>
 </ul>
 </li>
 </ul>
-<p><img alt="course-folders" src="/static/edu-folders.gif" /></p>
-<h2 id="further_private_folders">Further private folders<a class="headerlink" href="#further_private_folders" title="Permanent link">&para;</a></h2>
+<p><img alt="course-folders" src="static/education/edu-folders.gif" /></p>
+<h3 id="further_private_folders">Further private folders<a class="headerlink" href="#further_private_folders" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>scratch/</code> - temporary storage (e.g. for large calculations)</li>
-<li><code>cloud/</code> - selected folders from <a href="/services/seafile">Seafile</a> (if any folder is mounted to the environment)</li>
-<li><code>vc/</code> - <a href="/services/gitea">version controlled repositories</a> (if any repository is added to the environment)</li>
+<li><code>cloud/</code> - selected folders from <a href="../services/seafile/">Seafile</a> (if any folder is mounted to the environment)</li>
+<li><code>vc/</code> - <a href="../services/gitea/">version controlled repositories</a> (if any repository is added to the environment)</li>
 </ul>
-<h3 id="seafile_cloud_base_file_sharing">Seafile (cloud base file sharing) <img src="/static/seafile-transparent-1024.png" width=40 alt="seafile"><a class="headerlink" href="#seafile_cloud_base_file_sharing" title="Permanent link">&para;</a></h3>
+<h3 id="seafile_cloud_base_file_sharing">Seafile (cloud base file sharing) <img src="../static/seafile/seafile-transparent-1024.png" width=40 alt="seafile"><a class="headerlink" href="#seafile_cloud_base_file_sharing" title="Permanent link">&para;</a></h3>
 <p>You can add folders from the Seafile cloud based file storing and sharing platform. 
-Read more about <a href="Seafile">file synchronization</a></p>
-<h3 id="repository_from_the_gitea_version_controlled_content">Repository from the Gitea (version controlled content)  <img src="/static/gitea.svg" width=40 alt="seafile"><a class="headerlink" href="#repository_from_the_gitea_version_controlled_content" title="Permanent link">&para;</a></h3>
-<p>Repositories can be added from Gitea/Github etc. Read more about <a href="/versioncontrol">repository adding</a></p>
+Read more about <a href="../services/seafile/">file synchronization</a></p>
+<h3 id="repository_from_the_gitea_version_controlled_content">Repository from the Gitea (version controlled content)  <img src="../static/gitea/gitea.svg" width=40 alt="seafile"><a class="headerlink" href="#repository_from_the_gitea_version_controlled_content" title="Permanent link">&para;</a></h3>
+<p>Repositories can be added from Gitea/Github etc. Read more about <a href="../services/gitea/">repository adding</a></p>
 <hr />
 <h2 id="access_folders_in_rstudio">Access folders in Rstudio<div id="rstudio"></div><a class="headerlink" href="#access_folders_in_rstudio" title="Permanent link">&para;</a></h2>
 <p>To access all folders you need to go to <code>/v</code>: 
-<img alt="rstudio-folder.gif" src="/static/rstudio-folder-v.gif" /></p>
+<img alt="rstudio-folder.gif" src="../static/rstudio-folder-v.gif" /></p>
               
             </div>
           </div><footer>

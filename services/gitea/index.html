@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
         <link href="../../assets/_mkdocstrings.css" rel="stylesheet" />
-        <link href="../../stylesheets/custom.css" rel="stylesheet" />
+        <link href="/docs/stylesheets/custom.css" rel="stylesheet" />
     
       <script>
         // Current page data
@@ -59,7 +59,7 @@
               </ul>
               <p class="caption"><span class="caption-text">Education</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../education/education/">Courses</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../education/">Courses</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Collaboration</span></p>
@@ -87,6 +87,13 @@
               <p class="caption"><span class="caption-text">Reports</span></p>
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../../reports/">Interactive Dashboards and Applications</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Settings</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../settings/canvas/">Canvas</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../settings/usertokens/">Uset tokens and keys</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">FAQ</span></p>
@@ -133,7 +140,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <p><img alt="" src="/kooplex-manual/gitea/gitea-logo.svg" /> Use Version Control system to collaborate and keep a copy and track of your clean code.
+                <p><img alt="" src="../static/gitea/gitea-logo.svg" /> Use Version Control system to collaborate and keep a copy and track of your clean code.
 You can clone the public repositories via the https link provided by gitea, but you cannot push or access them via ssh. First you'll have to upload an ssh-key. Below there is a description how to do that.</p>
 <h2 id="use_ssh-keys">Use SSH-keys<a class="headerlink" href="#use_ssh-keys" title="Permanent link">&para;</a></h2>
 <h3 id="step_1_generate_a_key">Step 1: generate a key<a class="headerlink" href="#step_1_generate_a_key" title="Permanent link">&para;</a></h3>
@@ -141,7 +148,7 @@ You can clone the public repositories via the https link provided by gitea, but 
 Some references for linux users: <a href="https://betterprogramming.pub/how-to-set-up-multiple-ssh-keys-ae6688f76570">a tutorial</a>, <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">github</a> or <a href="https://www.ssh.com/academy/ssh/keygen">ssh.com</a></p>
 <h3 id="step_2_upload_to_gitea">Step 2: upload to gitea<a class="headerlink" href="#step_2_upload_to_gitea" title="Permanent link">&para;</a></h3>
 <p>Go to <code>https://gitea.vo.elte.hu/user/settings/keys</code> and click on the <em>add-key</em> button (the one with .pub extension)
-<img alt="" src="/kooplex-manual/gitea/upload-key-to-gitea.png" /></p>
+<img alt="" src="../static/gitea/upload-key-to-gitea.png" /></p>
 <h3 id="step_3_copy_it_locally_to_the_right_place">Step 3: copy it locally to the right place<a class="headerlink" href="#step_3_copy_it_locally_to_the_right_place" title="Permanent link">&para;</a></h3>
 <p>If you want to use it on Kooplex, then upload the key to the <code>/v/&lt;username&gt;/.ssh</code> folder, which you might have to create first.</p>
               

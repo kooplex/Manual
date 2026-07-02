@@ -2,82 +2,82 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://kooplex.github.io/Manual/</loc>
-         <lastmod>2026-01-26</lastmod>
+         <lastmod>2026-07-02</lastmod>
+    </url>
+    <url>
+         <loc>https://kooplex.github.io/Manual/education/</loc>
+         <lastmod>2026-07-02</lastmod>
     </url>
     <url>
          <loc>https://kooplex.github.io/Manual/environments/</loc>
-         <lastmod>2026-01-26</lastmod>
+         <lastmod>2026-07-02</lastmod>
     </url>
     <url>
          <loc>https://kooplex.github.io/Manual/folderstructure/</loc>
-         <lastmod>2026-01-26</lastmod>
+         <lastmod>2026-07-02</lastmod>
     </url>
     <url>
          <loc>https://kooplex.github.io/Manual/images/</loc>
-         <lastmod>2026-01-26</lastmod>
+         <lastmod>2026-07-02</lastmod>
     </url>
     <url>
          <loc>https://kooplex.github.io/Manual/packagemanagement/</loc>
-         <lastmod>2026-01-26</lastmod>
+         <lastmod>2026-07-02</lastmod>
     </url>
     <url>
          <loc>https://kooplex.github.io/Manual/projects/</loc>
-         <lastmod>2026-01-26</lastmod>
+         <lastmod>2026-07-02</lastmod>
     </url>
     <url>
          <loc>https://kooplex.github.io/Manual/reports/</loc>
-         <lastmod>2026-01-26</lastmod>
+         <lastmod>2026-07-02</lastmod>
     </url>
     <url>
          <loc>https://kooplex.github.io/Manual/FAQ/General/</loc>
-         <lastmod>2026-01-26</lastmod>
+         <lastmod>2026-07-02</lastmod>
     </url>
     <url>
          <loc>https://kooplex.github.io/Manual/admin/backup/</loc>
-         <lastmod>2026-01-26</lastmod>
+         <lastmod>2026-07-02</lastmod>
     </url>
     <url>
          <loc>https://kooplex.github.io/Manual/admin/configuration/</loc>
-         <lastmod>2026-01-26</lastmod>
+         <lastmod>2026-07-02</lastmod>
     </url>
     <url>
          <loc>https://kooplex.github.io/Manual/admin/installation/</loc>
-         <lastmod>2026-01-26</lastmod>
+         <lastmod>2026-07-02</lastmod>
     </url>
     <url>
          <loc>https://kooplex.github.io/Manual/admin/maintenance/</loc>
-         <lastmod>2026-01-26</lastmod>
+         <lastmod>2026-07-02</lastmod>
     </url>
     <url>
          <loc>https://kooplex.github.io/Manual/admin/upgrading/</loc>
-         <lastmod>2026-01-26</lastmod>
+         <lastmod>2026-07-02</lastmod>
     </url>
     <url>
          <loc>https://kooplex.github.io/Manual/admin/usermanagement/</loc>
-         <lastmod>2026-01-26</lastmod>
-    </url>
-    <url>
-         <loc>https://kooplex.github.io/Manual/education/education/</loc>
-         <lastmod>2026-01-26</lastmod>
+         <lastmod>2026-07-02</lastmod>
     </url>
     <url>
          <loc>https://kooplex.github.io/Manual/services/gitea/</loc>
-         <lastmod>2026-01-26</lastmod>
+         <lastmod>2026-07-02</lastmod>
     </url>
     <url>
          <loc>https://kooplex.github.io/Manual/services/seafile/</loc>
-         <lastmod>2026-01-26</lastmod>
+         <lastmod>2026-07-02</lastmod>
     </url>
     <url>
          <loc>https://kooplex.github.io/Manual/services/teleport/</loc>
-         <lastmod>2026-01-26</lastmod>
+         <lastmod>2026-07-02</lastmod>
     </url>
     <url>
          <loc>https://kooplex.github.io/Manual/settings/canvas/</loc>
-         <lastmod>2026-01-26</lastmod>
+         <lastmod>2026-07-02</lastmod>
     </url>
     <url>
          <loc>https://kooplex.github.io/Manual/settings/usertokens/</loc>
-         <lastmod>2026-01-26</lastmod>
+         <lastmod>2026-07-02</lastmod>
     </url>
 </urlset>

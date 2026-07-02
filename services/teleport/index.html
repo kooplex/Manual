@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
         <link href="../../assets/_mkdocstrings.css" rel="stylesheet" />
-        <link href="../../stylesheets/custom.css" rel="stylesheet" />
+        <link href="/docs/stylesheets/custom.css" rel="stylesheet" />
     
       <script>
         // Current page data
@@ -59,7 +59,7 @@
               </ul>
               <p class="caption"><span class="caption-text">Education</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../education/education/">Courses</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../education/">Courses</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Collaboration</span></p>
@@ -81,6 +81,13 @@
               <p class="caption"><span class="caption-text">Reports</span></p>
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../../reports/">Interactive Dashboards and Applications</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Settings</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../settings/canvas/">Canvas</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../settings/usertokens/">Uset tokens and keys</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">FAQ</span></p>
@@ -128,12 +135,11 @@
             <div class="section" itemprop="articleBody">
               
                 <h3 id="environment_setting">Environment setting<a class="headerlink" href="#environment_setting" title="Permanent link">&para;</a></h3>
-<p><img alt="Authy" src="env-config-teleport.png" /></p>
+<p><img alt="Authy" src="../static/teleport/env-config-teleport.png" /></p>
 <h4 id="install">Install<a class="headerlink" href="#install" title="Permanent link">&para;</a></h4>
-<p>Teleport lets you login with a two-factor authentication, so you will need to setup an authenticator, such as this: <br>
-<img alt="Authy" src="authy.svg" />
-<img src="teleport/authy.svg" alt="Authy" height=50>  https://play.google.com/store/apps/details?id=com.authy.authy&amp;hl=en_US&amp;gl=US&amp;pli=1</p>
-<p>You will need the tsh command (version 14.*), that can be obtained here for <a href="https://cdn.teleport.dev/teleport_14.3.31_amd64.deb">linux</a> and (windows)[https://cdn.teleport.dev/Teleport%20Connect%20Setup-14.3.31.exe]</p>
+<p>Teleport lets you login with a two-factor authentication, so you will need to setup an authenticator, such as Authy: 
+<a href="https://play.google.com/store/apps/details?id=com.authy.authy&amp;hl=en_US&amp;gl=US&amp;pli=1"><img alt="Authy" src="../../static/teleport/authy.png" /></a></p>
+<p>You will need the tsh command (version 14.* or 15.*), that can be obtained here for <a href="https://cdn.teleport.dev/teleport_14.3.31_amd64.deb">linux</a> and (windows)[https://cdn.teleport.dev/Teleport%20Connect%20Setup-14.3.31.exe]</p>
 <h4 id="registration">Registration<a class="headerlink" href="#registration" title="Permanent link">&para;</a></h4>
 <p>Upon request the administrators will send you a link similar to this <code>https://teleport.vo.elte.hu:443/web/invite/</code> with which you can register, activate your account and setup Two Factor Authentication. 
 It is valid for 60 minutes!</p>
@@ -177,9 +183,9 @@ ssh -p 40109 wfct0p@172.18.204.48.teleport.vo.elte.hu
 
 <h3 id="using_kernel_from_kooplex_environments">Using kernel from Kooplex environments<a class="headerlink" href="#using_kernel_from_kooplex_environments" title="Permanent link">&para;</a></h3>
 <p>Select an existing kernel and enter an url that can be found at Environment Settings-&gt;Connections tab.
-<img alt="vscode_select_kernel.gif" src="/kooplex-manual/teleport/vscode_select_kernel.gif" /></p>
+<img alt="vscode_select_kernel.gif" src="../static/teleport/vscode_select_kernel.gif" /></p>
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
-<p><a href="/kooplex-manual/troubleshooting">troubleshooting</a></p>
+<p><a href="../../FAQ/General/">troubleshooting</a></p>
               
             </div>
           </div><footer>
